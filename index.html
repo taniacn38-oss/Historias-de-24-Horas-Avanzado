@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Historias 24h</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="stories-header">
+      <button
+        id="add-story-btn"
+        class="story-add-btn"
+        type="button"
+        aria-label="Agregar historia"
+      >
+        <span class="plus-icon">+</span>
+        <span class="story-label">Tu historia</span>
+      </button>
+      <input id="story-file-input" type="file" accept="image/*" hidden />
+
+      <div id="stories-list" class="stories-list" aria-live="polite"></div>
+    </header>
+
+    <main class="feed-placeholder">
+      <p id="empty-state" class="empty-state">
+        Aún no hay historias activas. Pulsa el botón <strong>+</strong> para
+        publicar una.
+      </p>
+    </main>
+
+    <!-- Visor de historias -->
+    <div
+      id="story-viewer"
+      class="story-viewer hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Visor de historias"
+    >
+      <div class="viewer-inner">
+        <div id="progress-bars" class="progress-bars"></div>
+
+        <div class="viewer-topbar">
+          <span id="viewer-timer-info" class="viewer-info"></span>
+          <button
+            id="close-viewer-btn"
+            class="viewer-close"
+            type="button"
+            aria-label="Cerrar historia"
+          >
+            ✕
+          </button>
+        </div>
+
+        <div id="swipe-area" class="swipe-area">
+          <img id="viewer-image" class="viewer-image" alt="Historia" />
+          <button
+            id="prev-story-btn"
+            class="tap-zone tap-prev"
+            type="button"
+            aria-label="Historia anterior"
+          ></button>
+          <button
+            id="next-story-btn"
+            class="tap-zone tap-next"
+            type="button"
+            aria-label="Siguiente historia"
+          ></button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
